@@ -1,0 +1,43 @@
+-- Table: claimer
+CREATE TABLE claimer (
+    claimer_id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50)
+);
+
+-- Table: finder
+CREATE TABLE finder (
+    finder_id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    firstname VARCHAR(50),
+    lastname VARCHAR(50),
+    department VARCHAR(50)
+);
+
+-- Table: item
+CREATE TABLE item (
+    item_id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    item_name VARCHAR(100),
+    description VARCHAR(255)
+);
+
+-- Table: found
+CREATE TABLE found (
+    found_id INT(11) PRIMARY KEY AUTO_INCREMENT,
+    item_id INT(11),
+    room_no INT(11),
+    finder_id INT(11),
+    found_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (item_id) REFERENCES item(item_id),
+    FOREIGN KEY (finder_id) REFERENCES finder(finder_id)
+);
+
+-- Table: claimed_items
+CREATE TABLE claimed_items (
+    id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    claimer_id INT(11),
+    item_id INT(11),
+    found_id INT(11),
+    FOREIGN KEY (claimer_id) REFERENCES claimer(claimer_id),
+    FOREIGN KEY (item_id) REFERENCES item(item_id),
+    FOREIGN KEY (found_id) REFERENCES found(found_id)
+);
