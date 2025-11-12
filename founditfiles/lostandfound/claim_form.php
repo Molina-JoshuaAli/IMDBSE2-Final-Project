@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Lost and Found System</h1>
+    <h1>Lost and Found System </h1>
     <nav>
         <a href="index.php">Home</a>
         <a href="found_form.php">Report Found Item</a>

@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $desc = $_POST['description'];
     $room = $_POST['room_no'];
 
-    // Save finder and item
     $finder_id = $laf->addFinder($fname, $lname, $dept, $student_id);
     $item_id = $laf->addItem($item, $desc);
     $laf->addFound($item_id, $room, $finder_id);
@@ -29,7 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Lost and Found System</h1>
+<div class="container">
+    <img src="images/Data.png" alt="Lost and Found Logo" class="logo">
+    <h2>Lost and Found Portal</h2>
+</div>
     <nav>
         <a href="index.php">Home</a>
         <a href="found_form.php">Report Found Item</a>

@@ -1,145 +1,214 @@
-/* General Page Styling */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #f7f9fc;
-    color: #333;
+/* ===========================
+   🌟 General Page Styling
+   =========================== */
+   body {
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f3 0%, #dfe9f3 100%);
+    color: #2f3640;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Header & Navigation */
+/* ===========================
+   🏷️ Header & Navigation
+   =========================== */
 h1 {
-    background-color: #2e86de;
+    background: linear-gradient(90deg, #2e86de, #00a8ff);
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 18px 0;
     margin: 0;
     letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 nav {
-    text-align: center;
-    background-color: #54a0ff;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background: #1e6fd1;
+    padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: 0.3s;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #dff9fb;
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: #dff9fb;
 }
 
-/* Page Container */
-.container {
-    max-width: 700px;
-    background: white;
-    margin: 40px auto;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+nav a:hover::after {
+    width: 100%;
 }
 
-/* Form Styling */
+/* ===========================
+   📦 Page Container
+   =========================== */
+.container {
+    max-width: 800px;
+    background: white;
+    margin: 60px auto;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   🧾 Form Styling
+   =========================== */
 form {
     display: flex;
     flex-direction: column;
 }
 
 form h2 {
-    color: #2e86de;
+    color: #1e6fd1;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 label {
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #333;
 }
 
 input[type="text"],
 input[type="number"],
 textarea,
 select {
-    padding: 10px;
+    padding: 10px 12px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    margin-top: 5px;
+    border-radius: 8px;
+    margin-top: 6px;
     font-size: 15px;
-    outline: none;
-    transition: border 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     border-color: #2e86de;
+    box-shadow: 0 0 6px rgba(46,134,222,0.3);
+    outline: none;
 }
 
-/* Buttons */
+/* ===========================
+   🖱️ Buttons
+   =========================== */
 input[type="submit"],
 button {
-    background-color: #2e86de;
+    background: linear-gradient(90deg, #2e86de, #1b4f72);
     color: white;
     border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
-    margin-top: 20px;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin-top: 25px;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.3s;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 input[type="submit"]:hover,
 button:hover {
-    background-color: #1b4f72;
+    background: linear-gradient(90deg, #1b4f72, #2e86de);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Tables */
+/* ===========================
+   📊 Tables
+   =========================== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 th {
-    background-color: #2e86de;
+    background: linear-gradient(90deg, #2e86de, #00a8ff);
     color: white;
-    padding: 10px;
+    padding: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 td {
-    padding: 8px;
+    padding: 10px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f7ff;
 }
 
-/* Success Message */
+/* ===========================
+   ✅ Success Message
+   =========================== */
 .success {
     background-color: #d4edda;
     color: #155724;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
     border: 1px solid #c3e6cb;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
-/* Footer */
+/* ===========================
+   ⚓ Footer
+   =========================== */
 footer {
     text-align: center;
     padding: 15px;
-    background: #2e86de;
+    background: linear-gradient(90deg, #2e86de, #1b4f72);
     color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: auto;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 200px;
+    border-radius: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
