@@ -22,24 +22,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Report Found Item</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/found_form.css" />
 </head>
 <body>
-<div class="container">
-    <img src="images/Data.png" alt="Lost and Found Logo" class="logo">
-    <h2>Lost and Found Portal</h2>
-</div>
-    <nav>
-        <a href="index.php">Home</a>
-        <a href="found_form.php">Report Found Item</a>
-        <a href="claim_form.php">Claim Lost Item</a>
-        <a href="view_items.php">View Found Items</a>
+    <header class="page-header">
+        <img src="images/logo.jpg" alt="Logo" class="logo" />
+        <h1>Lost and Found System</h1>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.php" class="nav-link">Home</a>
+        <a href="found_form.php" class="nav-link active">Report Found Item</a>
+        <a href="claim_form.php" class="nav-link">Claim Lost Item</a>
+        <a href="view_items.php" class="nav-link">View Found Items</a>
     </nav>
 
-    <div class="container">
+    <main class="container">
         <form method="post">
             <h2>Report Found Item</h2>
 
@@ -48,29 +51,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endif; ?>
 
             <label>First Name:</label>
-            <input type="text" name="firstname" required>
+            <input type="text" name="firstname" placeholder="Enter your first name" required>
 
             <label>Last Name:</label>
-            <input type="text" name="lastname" required>
+            <input type="text" name="lastname" placeholder="Enter your last name" required>
 
             <label>Department:</label>
-            <input type="text" name="department" required>
+            <input type="text" name="department" placeholder="Your department" required>
 
             <label>Student ID:</label>
-            <input type="text" name="student_id" required>
+            <input type="text" name="student_id" placeholder="Your student ID" required>
 
             <label>Item Name:</label>
-            <input type="text" name="item_name" required>
+            <input type="text" name="item_name" placeholder="Name of the item found" required>
 
             <label>Description:</label>
-            <textarea name="description" required></textarea>
+            <textarea name="description" placeholder="Brief description of the item" required></textarea>
 
             <label>Room Number Found:</label>
-            <input type="number" name="room_no" required>
+            <input type="number" name="room_no" placeholder="Room number where found" required>
 
-            <input type="submit" value="Submit Found Item">
+            <input type="submit" value="Submit Found Item" class="submit-btn">
         </form>
-    </div>
+    </main>
 
     <footer>© 2025 Lost and Found System</footer>
 </body>
